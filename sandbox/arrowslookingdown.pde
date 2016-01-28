@@ -25,12 +25,16 @@ void mousePressed() {
 
 void draw() {
   point(mplx, mply);
+  int L, R;
   
-  arrowHeadL.set(sin(radians(135)), cos(radians(135)));
-  arrowHeadR.set(sin(radians(225)), cos(radians(225)));
+  L = -135;  // -x-y 
+  R = -90; // -xy
   
-  arrowHeadL.mult(12);
-  arrowHeadR.mult(12);
+  arrowHeadL.set(sin(radians(L)), cos(radians(L)));
+  arrowHeadR.set(sin(radians(R)), cos(radians(R)));
+  
+  arrowHeadL.mult(18);
+  arrowHeadR.mult(18);
   
   arrowHeadLtip.set(mplx, mply);
   arrowHeadRtip.set(mplx, mply);
@@ -38,6 +42,6 @@ void draw() {
   arrowHeadLtip.add(arrowHeadL);
   arrowHeadRtip.add(arrowHeadR);
   
-  line(mplx, mply-3, arrowHeadLtip.x, arrowHeadLtip.y);
-  line(mplx, mply-3, arrowHeadRtip.x, arrowHeadRtip.y);
+  line(mplx, mply, arrowHeadLtip.x, arrowHeadLtip.y);
+  line(mplx, mply, arrowHeadRtip.x, arrowHeadRtip.y);
 }
