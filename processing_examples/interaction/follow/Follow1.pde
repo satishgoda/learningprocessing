@@ -3,8 +3,6 @@
 * based on code from Keith Peters. 
 * 
 * A line segment is pushed and pulled by the cursor.
-* 
-* https://processing.org/examples/follow1.html
 */
 
 class Ex_Follow1 {
@@ -25,7 +23,7 @@ class Ex_Follow1 {
    
    void setup(int canvasWidth, int canvasHeight) {
       size(canvasWidth, canvasHeight);
-      strokeWeight(20.0);
+      strokeWeight(4);
       stroke(255, 100);
    }
    
@@ -34,14 +32,23 @@ class Ex_Follow1 {
       
       float dx = mouseX - x;
       float dy = mouseY - y;
-
+      
       angle1 = atan2(dy, dx);  
-
+      
       x = mouseX - (cos(angle1) * segLength);
       y = mouseY - (sin(angle1) * segLength);
       
       segment(x, y, angle1); 
-      ellipse(x, y, 20, 20);
+      //ellipse(x, y, 20, 20);
+      
+      msg = "Mouse(" + mouseX + "," + mouseY + ")";
+      text(msg, mouseX, mouseY);
+      
+      
+      msg = "Point(" + int(x) + "," + int(y) + ")";
+      text(msg, x, y);
+      
+      
    }
    
    void segment(float x, float y, float a) {
