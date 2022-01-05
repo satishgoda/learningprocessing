@@ -38,14 +38,18 @@ class Ex_Follow1 {
       x = mouseX - (cos(angle1) * segLength);
       y = mouseY - (sin(angle1) * segLength);
       
-      segment(x, y, angle1); 
+      line(x, y, mouseX, mouseY);
+      //segment(x, y, angle1); 
       //ellipse(x, y, 20, 20);
       
       msg = "Mouse(" + mouseX + "," + mouseY + ")";
       text(msg, mouseX, mouseY);
       
-      
-      msg = "Point(" + int(x) + "," + int(y) + ") " + int(degrees(angle1));
+      deg = degrees(angle1);
+      if (deg < 0) {
+         deg = 360 - abs(deg);         
+      }
+      msg = "Point(" + int(x) + "," + int(y) + ") " + deg;
       text(msg, x, y);
    }
    
