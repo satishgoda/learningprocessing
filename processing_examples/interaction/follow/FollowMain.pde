@@ -1,11 +1,14 @@
-Ex_Follow1 exFollow1 = new Ex_Follow1(1, 0, 0, 150);
+Ex_Follow1 exFollow1;
 
 
 void setup() {
-   exFollow1.setup(screenWidth, screenHeight);
-
-   exFollow1.x = width/2;
-
+   canvasWidth = screenWidth;
+   canvasHeight = screenHeight;
+   
+   exFollow1 = new Ex_Follow1(0, 0, 0, 350);
+   
+   exFollow1.setup(canvasWidth, canvasHeight);
+   
    mouseX = width/2;
    mouseY = height/2;
 }
