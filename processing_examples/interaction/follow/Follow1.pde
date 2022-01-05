@@ -45,10 +45,8 @@ class Ex_Follow1 {
       text(msg, mouseX, mouseY);
       
       
-      msg = "Point(" + int(x) + "," + int(y) + ")";
+      msg = "Point(" + int(x) + "," + int(y) + ") " + int(degrees(angle1));
       text(msg, x, y);
-      
-      
    }
    
    void segment(float x, float y, float a) {
